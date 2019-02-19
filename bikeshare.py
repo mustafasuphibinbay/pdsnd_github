@@ -1,12 +1,11 @@
 import time
 import pandas as pd
-import numpy as np
 from datetime import datetime as dt
+import numpy as np
 
-
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york': 'new_york_city.csv',
+             'washington': 'washington.csv' }
 
 def get_filters():
     """
@@ -118,9 +117,7 @@ def load_data(city, month, day):
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
 
-
     return df
-
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
