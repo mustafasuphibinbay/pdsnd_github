@@ -1,12 +1,11 @@
 import time
 import pandas as pd
-import numpy as np
 from datetime import datetime as dt
+import numpy as np
 
-
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york': 'new_york_city.csv',
+             'washington': 'washington.csv' }
 
 def get_filters():
     """
@@ -31,33 +30,29 @@ def get_filters():
     # TO DO:get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     city = input("Would you like to see data for Chicago, New York, or Washington?:\n").lower()
-    
-    print()
+
 
     # while loop to handle invalid user input for city name
 
     while city not in city_list:
         city = input("Enter a valid city name to analyse (Chicago, New York City, Washington):\n").lower()
-    
-    print()
 
 
     # TO DO: get user input for month (all, january, february, ... , june)
 
     month = input('For which month would you like to filter the data by - January, February, March, April, May or June?\nPlease enter "all" if you would like to apply no month filter:\n').lower()
-    
-    print()
-       
-    # while loop to handle invalid user input for month name 
+
+
+    # while loop to handle invalid user input for month name
 
     while month not in month_list:
         month = input(" Please enter a valid month name - January, February, March, April, May, June or all:\n").lower()
 
-    
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
 
-    day = input('For which day of the week would you like to filter the data by -Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? \nPlease enter "all" if you would like to apply no day filter:').lower()
-    
+    day = input('For which day of the week would you like to filter the data by -Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? \nPlease enter "all" if you would like to apply no day filter: \n').lower()
+
     # while loop to handle invalid user input for day name
 
     while day not in day_list:
@@ -83,18 +78,17 @@ def load_data(city, month, day):
    # load data file into a dataframe
 
     df = pd.read_csv(CITY_DATA[city])
-    
+
   # ask user if they would like to see 5 line of raw data
-    
+
     print('\nWould you like to see randomly selected five lines of raw data? Please enter Yes or No')
-    
-    while True: 
+
+    while True:
         answer_raw = input()
         if answer_raw.lower() == 'yes':
             print(df.sample(n=5))
-            print()
             print('\nWould you like to see 5 more randomly selected raw data? Enter yes or no.')
-            
+
         if answer_raw.lower() != 'yes':
             print(df)
             break
@@ -123,9 +117,7 @@ def load_data(city, month, day):
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
 
-
     return df
-
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -216,26 +208,26 @@ def user_stats(df):
     print()
 
 
-    # TO DO: Display counts of gender 
-    
-    # Since the gender data is only available for NYC and Chicago, we need to specify an exception to handle 
+    # TO DO: Display counts of gender
+
+    # Since the gender data is only available for NYC and Chicago, we need to specify an exception to handle
     # KeyError that may occur when user want to see Washington results
-    
+
     try:
         df['Gender'].value_counts()
         print('Gender:\n',df['Gender'].value_counts())
-    
+
     except KeyError:
         if CITY_DATA == 'Washington'.lower():
             pass
         print("The gender data are unfortunatelynot available for Washington.")
-        
+
     print()
 
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    
-    # Since the birth data is only available for NYC and Chicago, we need to specify an exception to handle 
+
+    # Since the birth data is only available for NYC and Chicago, we need to specify an exception to handle
     # KeyError for  Washington
 
     try:
@@ -249,14 +241,14 @@ def user_stats(df):
         age = current_year - df['Birth Year'].max()
         print('Most Recent Year of Birth: ' + str(int(age)))
         print()
-        
+
     except KeyError:
         if CITY_DATA == 'Washington'.lower():
             pass
         print("The birth data are unfortunatelynot available for Washington.")
-        
+
     print()
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
