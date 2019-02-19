@@ -43,7 +43,7 @@ earliest, most recent, most common year of birth
 - Jupyter Notebook
 - Visual Studio Code
 - NumPy
-- Pandas 
+- Pandas
 - DateTime
 - ipython
 - Terminal on Linux
