@@ -36,10 +36,16 @@ counts of each gender
 earliest, most recent, most common year of birth
 
 
-### Softwares used
+### Softwares and packages used
 
-- Python 3, NumPy, and pandas installed using Anaconda
-- Atom
+- Python 3
+- Anaconda
+- Jupyter Notebook
+- Visual Studio Code
+- NumPy
+- Pandas 
+- DateTime
+- ipython
 - Terminal on Linux
 
 ### Files included in the project
@@ -54,3 +60,5 @@ earliest, most recent, most common year of birth
 - The datetime module : https://docs.python.org/3/tutorial/stdlib.html#dates-and-times
 
 - Stackovelflow : https://stackoverflow.com/questions/tagged/python
+
+-
