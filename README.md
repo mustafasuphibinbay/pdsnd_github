@@ -12,19 +12,19 @@ In this project, I wrote a Python script to explore data provided by Motivate, a
 
 My Python script provides the following information:
 
--> Popular times of travel (i.e., occurs most often in the start time)
+> Popular times of travel (i.e., occurs most often in the start time)
 
 most common month
 most common day of week
 most common hour of day
 
--> Popular stations and trip
+> Popular stations and trip
 
 most common start station
 most common end station
 most common trip from start to end (i.e., most frequent combination of start station and end station)
 
--> Trip duration
+> Trip duration
 
 total travel time
 average travel time
@@ -33,20 +33,20 @@ User info
 
 counts of each user type
 counts of each gender
-earliest, most recent, most common year of birth 
+earliest, most recent, most common year of birth
 
 
-### Softwares used 
+### Softwares used
 
 - Python 3, NumPy, and pandas installed using Anaconda
 - Atom
-- Terminal on Linux 
+- Terminal on Linux
 
-### Files used
+### Files included in the project
 
-- bikesahre.py
-- chicago.csv 
-- new_york_city.csv 
+- bikeshare.py
+- chicago.csv
+- new_york_city.csv
 - washington.csv
 
 ### Credits
@@ -54,6 +54,3 @@ earliest, most recent, most common year of birth
 - The datetime module : https://docs.python.org/3/tutorial/stdlib.html#dates-and-times
 
 - Stackovelflow : https://stackoverflow.com/questions/tagged/python
-
-
-
